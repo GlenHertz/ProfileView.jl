@@ -20,5 +20,9 @@ end
 
 profile_test(1)
 Profile.clear()
-@profile profile_test(10)
-ProfileView.view()
+@profile profile_test(100)
+ProfileView.view(Tk=true)
+open("profile.svg", "w") do f
+    ProfileView.view(svgout=f)
+end
+#Profile.print()
